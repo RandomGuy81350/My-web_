@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <style>
+    .image-button {
+      background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 150px; /* Adjust width as needed */
+  height: 75px;
+    }
+        .progress-bar {
+            height: 10px;
+            background: green; /* Change color to green */
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+    </style>
+    <script>
+        let likes = 0;
+        const maxLikes = 100; // Set your maximum likes value here
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById("progressBar");
+            const percentage = (likes / maxLikes) * 100;
+            progressBar.style.width = percentage + "%";
+            progressBar.innerHTML = Math.round(percentage) + "%";
+        }
+
+        function onCli() {
+            likes++;
+            document.getElementById("thisp").innerHTML = "No. of likes: " + likes;
+            updateProgressBar();
+        }
+    </script>
+</head>
+<body>
+    <center>
+<br> <h2> This website is created by a <i>Super Pro Guy </i> </h2>
+<br> <br> </center> 
+        <button class="image-button" onclick="onCli()"> Like</button>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar">progress</div>
+        </div>
+        <p id="thisp"></p>
+    </center>
+</body>
+</html>
