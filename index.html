@@ -1,120 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhen ke laude</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wow Cool Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff6f61, #ff9a44);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .content {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .content:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-<center> <h1> Bhai see this </h1><br>
-<h3> You can create your own website</h3>
-<br> <br></center>
-<h2> <b> <u> How to create? </u> </b> </h2>
-<br>
-<p> 1. Create a html file in computer or download txtpad from playstore to use in mobile.
-<br> 2. Search github.com in chrome.
-  <br> 3. Create an account.
-  <br> 4. Create a respiratory.
-  <br> 5. Upload ur file.
-  <br> 6. To know more, <b> <a href="https://youtu.be/s8ZLs6oerYQ?si=jK7-ivn4l1CU9nMw"> Click here </a> </b>
-  <br> 7. If u have created and encountered 404 problem then, <b> <a href="https://youtu.be/WxQrx1zZhcY?si=3od5nutnbwhKPZNz"> Click here </a> </b>
-</p>
-<br> <br>
-  <h2>Why create a website?</h2>
-  <p> You can create a website to give reference of ur website in economics hw. (Gopal can't know a thing)
-    <br> Use chatGPT to get the essay, copy paste what ChatGPT wrote in ur website and give the reference in ur economics hw.
-    <br> How is my plan 😈?
-  </p>
-  <br>
-    <div class="container">
-        <div class="head"><h1>Post a Comment</h1></div>
-        <div><span id="comment">0</span> Comments</div>
-        <div class="comments"></div>
-        <div class="commentbox">
-            <img src="user1.png" alt="">
-            <div class="content">
-                <h2>Comment as: </h2>
-                <input type="text" value="Anonymous" class="user">
-
-                <div class="commentinput">
-                    <input type="text" placeholder="Enter comment" class="usercomment">
-                    <div class="buttons">
-                        <button type="submit" disabled id="publish">Publish</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="content">
+        <h1>Welcome to the Wow Page!</h1>
+        <p>Enjoy this cool animated background and sleek design.</p>
     </div>
-  <br>
-  <h4> Games to play: </h4>
-  <p> <b> <a href="https://randomguy81350.github.io/TicTacToe/"> Tic Tac Toe </a> </b>
-  </p>
-<div>
-  <a href="about.html"> About us </a>
-</div>
-    <br>
-    <br>
-    <br>
 </body>
-    <script>
-        const USERID = {
-    name: null,
-    identity: null,
-    image: null,
-    message: null,
-    date: null
-        }
-        const userComment = document.querySelector(".usercomment");
-const publishBtn = document.querySelector("#publish");
-const comments = document.querySelector(".comments");
-const userName = document.querySelector(".user");
-const notify = document.querySelector(".notifyinput");
-
-    userComment.addEventListener("input", e => {
-        if(!userComment.value) {
-            publishBtn.setAttribute("disabled", "disabled");
-            publishBtn.classList.remove("abled")
-        }else {
-            publishBtn.removeAttribute("disabled");
-            publishBtn.classList.add("abled")
-        }
-    })
-
-    function addPost() {
-        if(!userComment.value) return;
-        USERID.name = userName.value;
-        if(USERID.name === "Anonymous") {
-            USERID.identity = false;
-            USERID.image = "anonymous.png"
-        }else {
-            USERID.identity = true;
-            USERID.image = "user.png"
-        }
-
-        USERID.message = userComment.value;
-        USERID.date = new Date().toLocaleString();
-        let published = 
-        `<div class="parents">
-            <img src="${USERID.image}">
-            <div>
-                <h1>${USERID.name}</h1>
-                <p>${USERID.message}</p>
-                <div class="engagements"><img src="like.png" id="like"><img src="share.png" alt=""></div>
-                <span class="date">${USERID.date}</span>
-            </div>    
-        </div>`
-
-        comments.innerHTML += published;
-        userComment.value = "";
-        publishBtn.classList.remove("abled")
-
-        let commentsNum = document.querySelectorAll(".parents").length;
-        document.getElementById("comment").textContent = commentsNum;
-
-    }
-
-    publishBtn.addEventListener("click", addPost);
-        
-    </script>
 </html>
